@@ -5,7 +5,7 @@ from typing import List, Optional
 # Configuración de FastAPI y Swagger
 app = FastAPI(
     title="API de Libros",
-    description="Sistema de gestión de una biblioteca digital (Ejemplo para TDD y APIs)",
+    description="Sistema de gestión de una biblioteca digital ",
     version="1.0.0",
 )
 
@@ -47,7 +47,7 @@ def crear_libro(libro: Libro):
 def modificar_libro(
     libro_id: int,
     paginas: Optional[int] = None,
-    descuento: Optional[float] = Query(None, ge=0, le=100),  # Corrección clave aquí
+    descuento: Optional[float] = Query(None, ge=0, le=100),  
 ):
     for libro in libros_db:
         if libro.id == libro_id:
